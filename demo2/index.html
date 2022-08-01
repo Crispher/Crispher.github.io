@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>4D Viewport by yugu233 </title>
+        <script src="./CCapture.js"></script>
+        <script src="./webm-writer-0.2.0.js"></script>
+        <script src="./download.js"></script>
+
+        <style type="text/css">
+            html {
+                height: 100%;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #000;
+                color: #ffffff;
+                font-family: 'roboto condensed', sans-serif;
+                font-size: 13px;
+                line-height: 20px;
+                height: 100%;
+                overflow: hidden
+            }
+            #scroller{
+                position: fixed;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 100;
+                overflow: scroll;
+                background-color: #000;
+            }
+            a {
+                color: #fff;
+                text-decoration: none;
+                border-bottom: 1px dotted #fff;
+            }
+            a:hover {
+                border-bottom: 1px solid #fff
+            }
+            #title {
+                z-index: 100;
+                position: absolute;
+                top: 20px;
+                width: 350px;
+                left: 20px;
+                background-color: rgba(0,0,0,0.2);
+                border-radius: 3px;
+                padding: 10px;
+                overflow: auto;
+            }
+            #options{
+                position: absolute;
+                top: 20px;
+                width: 400px;
+                right: 20px;
+                background-color: coral;
+                border-radius: 3px;
+                padding: 10px;
+                overflow: hidden;
+            }
+            h1{
+                font-size: 20px;
+                color: coral;
+                margin: 0;
+            }
+            h2{
+                font-size: 16px;
+                color: coral;
+                margin: 0;
+                margin-top: 30px;
+            }
+            .card {
+                text-align: center;
+                background-color: #000;
+                font-size: 16px;
+                font-style: bold;
+                border-radius: 3px;
+                padding: 10px;
+                width: 80%;
+                border : 1px solid green;
+                margin: 10px;
+            }
+            .correct {
+                border: 1px solid white;
+                background-color: #0a0;
+            }
+            .wrong {
+                border: 1px solid white;
+                background-color: #800;
+            }
+            #viewport {
+                position: absolute;
+                top: 32px;
+                left: 0;
+                right: 300px;
+                bottom: 0;
+            }
+
+            #viewport #info {
+                text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+                pointer-events: none;
+            }
+            </style>
+    </head>
+
+    <body>
+
+        <div id="container"></div>
+        <div id="title">
+
+                <h1>这张三维照片中共有多少个超立方体？</h1>
+                <p>  </p>
+                <h2>难度</h2>
+                <p style="margin-left: 20px;"><a href=".?p=0.05">简单</a> ｜ <a href=".?p=0.1">中等</a> ｜ <a href=".?p=0.2">困难</a> ｜ <a href=".?p=0.3">极难</a>
+                </p>
+                <p>  </p>
+                <h2>选择你的答案 ｜ <a href=".">刷新关卡</a></h2>
+                <div class="card" id="a"></div>
+                <div class="card" id="b"></div>
+                <div class="card" id="c"></div>
+                <div class="card" id="d"></div>
+
+                <h2>这是什么？</h2>
+                <ul>
+                <li><a href="https://www.bilibili.com/video/BV1Z34y1L7LF/?spm_id_from=333.788&vd_source=3f3dd3bd615b012e95bf22db024e474c"> 这个视频</a>详细解释了这个游戏用到的四维空间可视化方法。
+                </li>
+                <li><a href="/demo1">这个演示</a>只包含一个超立方体，可以帮助你理解超立方体的基本特点。</li>
+            </ul>
+                <h2>操作</h2>
+                <ul>
+                    <li>Q/A键：将相机向蓝/绿方向移动</li>
+                    <li>W/S键：将相机向上（白）/下（黄）方向移动</li>
+                    <li>E/D键：将相机向红/橙方向移动</li>
+                    <li>鼠标：转动/缩放三维照片（四维相机位置不变）</li>
+                </ul>
+
+                <h2>更多</h2>
+                <ul>
+                    <li><a href="https://www.bilibili.com/video/BV1Z34y1L7LF/?spm_id_from=333.788&vd_source=3f3dd3bd615b012e95bf22db024e474c">四维空间系列视频</a>（更新中）</li>
+                    <li><a href="https://github.com/Crispher/4D">Github</a>: 用来渲染视频动画这个游戏的源代码。</li>
+                    <li> 关注我的 B 站账号 <a href="https://space.bilibili.com/613069855">bilibili: yugu233</a> </li>
+
+        </div>
+
+        <script type="module" src="bundle.js"></script>
+    </body>
+</html>
